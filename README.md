@@ -14,9 +14,15 @@ Please use postman collection to test API end point
 Thank you
 
 NOTE:
++ {{apiId}}: qbw9339npb
++ {{keyweather}}: d6jXqWZCGWDCybSFQZRq2w7PDOHpGLmA
+
 + how to get Bearer {{authToken}}:
     after run local and login success: get it at 
     ![Alt text](images/bearer.png)
+
++ how to get {{todoId}}: 
+    after run api create to do , then, run api get all todos : will have information of todoId
 
 + API get api weather: this is free api and limit get (about 50 times), if > 50 will error and tomorrow will reset  
 
