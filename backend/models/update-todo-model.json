@@ -3,22 +3,13 @@
   "title": "group",
   "type": "object",
   "properties": {
-    "name": {
+    "note": {
       "type": "string",
-      "pattern": "^(?!\\s*$).+",
-      "minLength": 3
-    },
-    "dueDate": {
-      "type": "string"
-    },
-    "done": {
-      "type": "boolean"
+      "minLength": 1
     }
   },
   "required": [
-    "name",
-    "dueDate",
-    "done"
+    "note"
   ],
   "additionalProperties": false
 }

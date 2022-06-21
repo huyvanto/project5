@@ -2,7 +2,7 @@ import * as AWS from 'aws-sdk'
 import { DocumentClient } from 'aws-sdk/clients/dynamodb'
 import { createLogger } from '../utils/logger'
 import { TodoItem } from '../models/TodoItem'
-import { TodoUpdate } from '../models/TodoUpdate';
+import { TodoUpdate } from '../models/TodoUpdate'
 import * as attachmentUtils from '../fileStorage/attachmentUtils'
 
 const AWSXRay = require('aws-xray-sdk');
@@ -56,14 +56,12 @@ export class TodosAccess {
                 userId: userId,
                 todoId: todoId
             },
-            UpdateExpression: "set #n = :r, dueDate=:p, done=:a",
+            UpdateExpression: "set #n = :r",
             ExpressionAttributeValues: {
-                ":r": todoUpdate.name,
-                ":p": todoUpdate.dueDate,
-                ":a": todoUpdate.done
+                ":r": todoUpdate.note
             },
             ExpressionAttributeNames: {
-                "#n": "name"
+                "#n": "note"
             },
             ReturnValues: "UPDATED_NEW"
         };

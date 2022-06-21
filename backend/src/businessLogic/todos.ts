@@ -1,8 +1,7 @@
 import { TodosAccess } from '../dataLayer/todosAcess'
 import { TodoItem } from '../models/TodoItem'
-import { CreateTodoRequest } from '../requests/CreateTodoRequest'
-import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
 import { TodoUpdate } from '../models/TodoUpdate'
+import { UpdateTodoRequest } from '../requests/UpdateTodoRequest'
 import * as uuid from 'uuid'
 
 const data = new TodosAccess()
@@ -18,8 +17,13 @@ export async function getTodosForUser(userId: string): Promise<TodoItem[]> {
 }
 
 export async function createTodo(
-    createTodoRequest: CreateTodoRequest,
-    userId: string
+    location: string,
+    name: string,
+    dayTemp: number,
+    nightTemp: number,
+    dayForecast: string,
+    nightForecast: string,
+    userId: string,
 ): Promise<TodoItem> {
 
     const todoId = uuid.v4()
@@ -28,9 +32,13 @@ export async function createTodo(
         userId: userId,
         todoId: todoId,
         createdAt: new Date().toISOString(),
-        name: createTodoRequest.name,
-        dueDate: createTodoRequest.dueDate,
-        done: false
+        location: location,
+        name: name,
+        dayTemp: dayTemp,
+        nightTemp: nightTemp,
+        dayForecast: dayForecast,
+        nightForecast: nightForecast,
+        note: ''
     }
 
     return await data.createTodo(newTodo)
@@ -43,9 +51,7 @@ export async function updateTodo(
 ): Promise<TodoUpdate> {
 
     const updatedTodo: TodoUpdate = {
-        name: updateTodoRequest.name,
-        dueDate: updateTodoRequest.dueDate,
-        done: updateTodoRequest.done
+        note: updateTodoRequest.note
     }
 
     return await data.updateTodo(userId, todoId, updatedTodo)

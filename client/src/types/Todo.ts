@@ -1,8 +1,12 @@
 export interface Todo {
   todoId: string
   createdAt: string
+  location: string
   name: string
-  dueDate: string
-  done: boolean
+  dayTemp: number
+  nightTemp: number
+  dayForecast: string
+  nightForecast: string
+  note: string
   attachmentUrl?: string
 }

@@ -2,6 +2,8 @@ import * as React from 'react'
 import { Form, Button } from 'semantic-ui-react'
 import Auth from '../auth/Auth'
 import { getUploadUrl, uploadFile } from '../api/todos-api'
+import { History } from 'history'
+
 
 enum UploadState {
   NoUpload,
@@ -16,6 +18,8 @@ interface EditTodoProps {
     }
   }
   auth: Auth
+  history: History
+
 }
 
 interface EditTodoState {
@@ -61,6 +65,7 @@ export class EditTodo extends React.PureComponent<
       alert('Could not upload a file: ' + e.message)
     } finally {
       this.setUploadState(UploadState.NoUpload)
+      this.props.history.push(`/`)
     }
   }
 

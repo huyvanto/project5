@@ -6,9 +6,67 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
+
+  background-color: #abdbe3 !important;
+
+  }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.masthead {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.my-div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.my-div h1 {
+  color: aliceblue;
+  font-size: 60px;
+  font-weight: 800 ;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.my-div button {
+  color: black !important;
+  font-weight: 800 !important;
+
+}
+
+.my-button {
+  width: 100%;
+}
+
+.rowContent {
+  background-color: blanchedalmond;
+}
+.ui.button{
+  width: 100%;
+}
+.ui.menu{
+  background-color: #abdbe3 !important;
+}
+
+.ui.menu a {
+  color: black !important;
+}
+.fix-img {
+  height: 300px;
+  width: 300px;
+}
+img {
+  max-width: 100%;
+  height: auto;
 }

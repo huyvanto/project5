@@ -4,11 +4,14 @@
       "es2017"
     ],
     "moduleResolution": "node",
+    "types": [ "node", "jest" ],
+    "typeRoots": ["./src/types", "node_modules/@types"],
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "sourceMap": true,
     "target": "es2017",
-    "outDir": "lib"
+    "outDir": "lib",
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules"

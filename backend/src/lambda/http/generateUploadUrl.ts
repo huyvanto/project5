@@ -1,7 +1,6 @@
 import 'source-map-support/register'
 
 import { APIGatewayProxyEvent, APIGatewayProxyResult } from 'aws-lambda'
-import * as middy from 'middy'
 import { cors, httpErrorHandler } from 'middy/middlewares'
 
 import { createAttachmentPresignedUrl } from '../../businessLogic/todos'
@@ -10,6 +9,8 @@ import { todoExists } from '../../businessLogic/todos'
 import { createLogger } from '../../utils/logger'
 
 const logger = createLogger('Todo')
+
+const middy = require('middy')
 
 export const handler = middy(
   async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {

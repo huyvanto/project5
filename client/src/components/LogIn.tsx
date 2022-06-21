@@ -1,6 +1,7 @@
 import * as React from 'react'
 import Auth from '../auth/Auth'
 import { Button } from 'semantic-ui-react'
+import background from "../images/van-336606_1280.jpg"
 
 interface LogInProps {
   auth: Auth
@@ -12,15 +13,16 @@ export class LogIn extends React.PureComponent<LogInProps, LogInState> {
   onLogin = () => {
     this.props.auth.login()
   }
-
+  
   render() {
-    return (
+    return (      
       <div>
-        <h1>Please log in</h1>
-
-        <Button onClick={this.onLogin} size="huge" color="olive">
-          Log in
-        </Button>
+        <div  className="masthead" style={{ backgroundImage: `url(${background})`, backgroundRepeat: 'no-repeat', backgroundSize: '100% 100%'}} > 
+        </div>
+        <div className="my-div">
+          <h1>Plan your trip now</h1>
+          <Button className="my-button" onClick={this.onLogin}  >Log in</Button>
+        </div>
       </div>
     )
   }
